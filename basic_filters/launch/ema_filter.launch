@@ -1,0 +1,25 @@
+<launch>
+    <node name="ema_filter" pkg="basic_filters" type="ema_filter_node" output="screen">
+        <rosparam>
+            inputTopics: [joint1_command, 
+                            joint2_command, 
+                            joint3_command, 
+                            joint4_command,
+                            joint5_command,
+                            joint6_command,
+                            joint7_command,
+                            joint8_command]
+
+            outputTopics: [joint1_filtered,
+                            joint2_filtered,
+                            joint3_filtered,
+                            joint4_filtered,
+                            joint5_filtered,
+                            joint6_filtered,
+                            joint7_filtered,
+                            joint8_filtered]
+
+            smoothingFactors: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+        </rosparam>
+    </node>
+</launch>
