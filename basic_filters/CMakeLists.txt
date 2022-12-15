@@ -133,6 +133,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(ema_filter_node src/ema_filter_node.cpp)
+add_executable(ema_trajectory_filter_node src/ema_trajectory_filter_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -148,7 +149,9 @@ add_executable(ema_filter_node src/ema_filter_node.cpp)
 target_link_libraries(ema_filter_node
   ${catkin_LIBRARIES}
 )
-
+target_link_libraries(ema_trajectory_filter_node
+  ${catkin_LIBRARIES}
+)
 #############
 ## Install ##
 #############

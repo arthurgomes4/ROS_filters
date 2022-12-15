@@ -1,0 +1,13 @@
+<launch>
+    <node name="ema_trajectory_filter" pkg="basic_filters" type="ema_trajectory_filter_node" output="screen">
+        <rosparam>
+            inputTopics: [left_hand_command,
+                            right_hand_command]
+
+            outputTopics: [left_hand_filtered,
+                            right_hand_filtered]
+
+            smoothingFactors: [[0.4, 0.4, 0.4, 0.4], [0.4, 0.4, 0.4, 0.4]]
+        </rosparam>
+    </node>
+</launch>
