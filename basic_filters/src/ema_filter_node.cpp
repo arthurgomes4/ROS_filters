@@ -1,39 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/Float64.h"
-
-class EMAfilter
-{
-    float m_smoothingFactor;
-    float m_previousValue;
-    
-    public:
-    EMAfilter(){
-        m_smoothingFactor = 0.5;
-        m_previousValue = 0;
-    }
-    EMAfilter(float smoothingFactor){
-        m_smoothingFactor = smoothingFactor;
-        m_previousValue = 0;
-    }
-
-    float getSmoothingFactor(){
-        return m_smoothingFactor;
-    }
-
-    void setSmoothingFactor(float newValue){
-        m_smoothingFactor = newValue;
-    }
-
-    void resetFilter(float initialValue){
-        m_previousValue = initialValue;
-    }
-
-    float filterValue(float currentValue){
-        float filteredValue = currentValue*m_smoothingFactor + m_previousValue*(1-m_smoothingFactor);
-        m_previousValue = filteredValue;
-        return filteredValue;
-    }
-};
+#include "../include/ema_filter.h"
 
 class ROS_EMAfilter
 {

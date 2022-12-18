@@ -9,13 +9,13 @@ EMAfilter::EMAfilter(float smoothingFactor){
     m_previousValue = 0;
 }
 
-inline float EMAfilter::getSmoothingFactor(){
+float EMAfilter::getSmoothingFactor(){
     return m_smoothingFactor;}
 
-inline void EMAfilter::setSmoothingFactor(float newValue){
+void EMAfilter::setSmoothingFactor(float newValue){
     m_smoothingFactor = newValue;}
 
-inline void EMAfilter::resetFilter(float initialValue = 0){
+void EMAfilter::resetFilter(float initialValue = 0){
     m_previousValue = initialValue;}
 
 float EMAfilter::filterValue(float currentValue){
