@@ -1,8 +1,7 @@
-#include <sstream>
-#include <iostream>
 #include "ros/ros.h"
 #include "trajectory_msgs/JointTrajectory.h"
 #include "XmlRpcValue.h"
+
 #include "../include/ema_filter.h"
 
 class ROS_EMAtrajectoryFilter
